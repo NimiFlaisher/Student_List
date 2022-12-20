@@ -15,4 +15,9 @@ public class Student {
         this.checkButton = checkButton;
     }
 
+    public void BadExample(){
+        //does nothing, ignore this
+        return;
+    }
+
 }
