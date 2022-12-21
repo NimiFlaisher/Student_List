@@ -37,10 +37,10 @@ public class ProfilePage extends AppCompatActivity {
         checkButton=intent.getBooleanExtra("sCheckButton",false);
         studentPosition=intent.getIntExtra("sPosition",0);
 
-        sName.setText("name: "+studentName);
-        sId.setText("id: "+studentId);
-        sPhoneNumber.setText("phone: "+studentPhoneNumber);
-        sAddress.setText("address: "+studentAddress);
+        sName.setText("Name: "+studentName);
+        sId.setText("ID: "+studentId);
+        sPhoneNumber.setText("Phone: "+studentPhoneNumber);
+        sAddress.setText("Address: "+studentAddress);
         sCheckButton.setChecked(checkButton);
 
     }

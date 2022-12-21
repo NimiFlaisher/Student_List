@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -49,9 +51,47 @@ public class StudentRecyclerList extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public class StudentRecyclerAdapter extends RecyclerView.Adapter<StudentView>{
-        StudentView.OnItemClickListener listener;
-        void setOnItemClickListener(StudentView.OnItemClickListener listener){
+    class StudentView extends RecyclerView.ViewHolder {
+        TextView nameView;
+        TextView idView;
+        CheckBox cbView;
+
+        public StudentView(@NonNull View itemView, OnItemClickListener listener) {
+            super(itemView);
+            nameView = itemView.findViewById(R.id.studentNameText);
+            idView = itemView.findViewById(R.id.studentIdText);
+            cbView = itemView.findViewById(R.id.checkBox);
+            cbView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = (int)cbView.getTag();
+                    Student student = studentList.get(position);
+                    student.checkButton = cbView.isChecked();
+                }
+            });
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    listener.onItemClick(position);
+                }
+            });
+        }
+        public void bind(Student student, int position) {
+            nameView.setText(student.name);
+            idView.setText(student.id);
+            cbView.setChecked(student.checkButton);
+            cbView.setTag(position);
+        }
+    }
+
+    public interface OnItemClickListener{
+        void onItemClick(int position);
+    }
+
+    class StudentRecyclerAdapter extends RecyclerView.Adapter<StudentView>{
+        OnItemClickListener listener;
+        void setOnItemClickListener(OnItemClickListener listener){
             this.listener = listener;
         }
         @NonNull
