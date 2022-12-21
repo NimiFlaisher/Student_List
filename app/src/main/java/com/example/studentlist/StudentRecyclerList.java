@@ -2,6 +2,7 @@ package com.example.studentlist;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -34,7 +35,9 @@ public class StudentRecyclerList extends AppCompatActivity {
 
         adapter.setOnItemClickListener((position)->{
                 Student st = studentList.get(position);
+            Log.d("we here  1?","yes");
                 Intent intent = new Intent(this,ProfilePage.class);
+                Log.d("we here 2?","yes");
                 intent.putExtra("position",position);
                 intent.putExtra("name",st.name);
                 intent.putExtra("id",st.id);
