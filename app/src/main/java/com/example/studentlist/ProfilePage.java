@@ -1,5 +1,6 @@
 package com.example.studentlist;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,7 @@ public class ProfilePage extends AppCompatActivity {
     Boolean checkButton;
     Integer studentPosition;
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Intent intent = getIntent();
@@ -43,18 +45,17 @@ public class ProfilePage extends AppCompatActivity {
 
     }
 
-//    public void editButton(View view){
-//        Intent intent = new Intent(this,EditStudent.class);
-//        intent.putExtra("name",name_user);
-//        intent.putExtra("id",id_user);
-//        intent.putExtra("phone",phone_user);
-//        intent.putExtra("address",address_user);
-//        intent.putExtra("cb",cb_user);
-//        intent.putExtra("pos",pos_user);
-//
-//        startActivity(intent);
-//        finish();
-//    }
+    public void editButton(View view){
+        Intent intent = new Intent(this,StudentEdit.class);
+        intent.putExtra("name",studentName);
+        intent.putExtra("id",studentId);
+        intent.putExtra("phone",studentPhoneNumber);
+        intent.putExtra("address",studentAddress);
+        intent.putExtra("cb",checkButton);
+        intent.putExtra("pos",studentPosition);
+        startActivity(intent);
+        finish();
+    }
 
 
 }

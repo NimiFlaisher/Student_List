@@ -25,9 +25,23 @@ public class StudentRecyclerList extends AppCompatActivity {
         studentList = Demo.instance().getStudents();
         RecyclerView list = findViewById(R.id.recyclerStudentList);
         list.setHasFixedSize(true);
+
         list.setLayoutManager(new LinearLayoutManager(this));
         StudentRecyclerAdapter adapter = new StudentRecyclerAdapter();
         list.setAdapter(adapter);
+
+        adapter.setOnItemClickListener((position)->{
+                Student st = studentList.get(position);
+                Intent intent = new Intent(this,ProfilePage.class);
+                intent.putExtra("position",position);
+                intent.putExtra("name",st.name);
+                intent.putExtra("id",st.id);
+                intent.putExtra("phone",st.phone);
+                intent.putExtra("address",st.address);
+                intent.putExtra("checkButton",st.checkButton.booleanValue());
+                startActivity(intent);
+            }
+        );
     }
 
     public void addStudentButton(View view) {
