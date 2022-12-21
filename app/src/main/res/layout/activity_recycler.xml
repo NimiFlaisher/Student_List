@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".StudentRecyclerList">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerStudentList"
@@ -23,9 +24,11 @@
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="50dp"
         android:clickable="true"
+        android:onClick="addStudentButton"
         app:backgroundTint="#BD51CF"
         app:fabSize="auto"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_add" />
+        app:srcCompat="@android:drawable/ic_menu_add"
+        tools:ignore="SpeakableTextPresentCheck" />
 </androidx.constraintlayout.widget.ConstraintLayout>
