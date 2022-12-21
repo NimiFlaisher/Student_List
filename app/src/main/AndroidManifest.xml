@@ -25,10 +25,10 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity android:name=".StudentBuilder"></activity>
         <activity android:name=".ProfilePage"></activity>
         <activity android:name=".StudentEdit"></activity>
-
     </application>
 
 </manifest>
