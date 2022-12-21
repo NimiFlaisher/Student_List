@@ -20,21 +20,22 @@
         android:id="@+id/studentNameText"
         android:layout_width="137dp"
         android:layout_height="42dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="36dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.437"
+        android:textSize="24sp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/studentIdText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="134dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="20dp"
         android:text="TextView"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/studentNameText"
         app:layout_constraintVertical_bias="0.031" />
