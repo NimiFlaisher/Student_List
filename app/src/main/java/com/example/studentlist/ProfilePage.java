@@ -57,5 +57,9 @@ public class ProfilePage extends AppCompatActivity {
         finish();
     }
 
+    public void backButton(View view){
+        finish();
+    }
+
 
 }

@@ -35,15 +35,13 @@ public class StudentRecyclerList extends AppCompatActivity {
 
         adapter.setOnItemClickListener((position)->{
                 Student st = studentList.get(position);
-            Log.d("we here  1?","yes");
                 Intent intent = new Intent(this,ProfilePage.class);
-                Log.d("we here 2?","yes");
-                intent.putExtra("position",position);
-                intent.putExtra("name",st.name);
-                intent.putExtra("id",st.id);
-                intent.putExtra("phone",st.phone);
-                intent.putExtra("address",st.address);
-                intent.putExtra("checkButton",st.checkButton.booleanValue());
+                intent.putExtra("sName",st.name);
+                intent.putExtra("sId",st.id);
+                intent.putExtra("sPhoneNumber",st.phone);
+                intent.putExtra("sAddress",st.address);
+                intent.putExtra("sCheckButton",st.checkButton.booleanValue());
+                intent.putExtra("sPosition",position);
                 startActivity(intent);
             }
         );

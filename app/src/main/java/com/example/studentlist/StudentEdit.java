@@ -52,18 +52,19 @@ public class StudentEdit extends AppCompatActivity {
         st.phone=phone.getText().toString();
         st.address=address.getText().toString();
         st.checkButton=cb.isChecked();
-        Intent intent = new Intent(this,StudentRecyclerList.class);
+        Intent intent = new Intent(getApplicationContext(), StudentRecyclerList.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
     public void cancelBtn(View view){
-        Intent intent = new Intent(this,StudentRecyclerList.class);
-        startActivity(intent);
+        finish();
     }
 
     public void deleteBtn(View view){
         data.remove(data.get(pos));
         Intent intent = new Intent(this,StudentRecyclerList.class);
+        finish();
         startActivity(intent);
     }
 
