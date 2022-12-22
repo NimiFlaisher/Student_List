@@ -57,8 +57,18 @@ public class ProfilePage extends AppCompatActivity {
         finish();
     }
 
+    public void onCheck(View view){
+        checkButton = !checkButton;
+    }
+
     public void backButton(View view){
+        Intent intent = new Intent();
+        intent.putExtra("cb",checkButton);
+        intent.putExtra("pos",studentPosition);
+        setResult(RESULT_OK,intent);
         finish();
+//        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//        startActivity(intent);
     }
 
 

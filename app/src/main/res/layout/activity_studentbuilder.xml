@@ -81,9 +81,10 @@
         android:layout_marginEnd="15dp"
         android:ems="10"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/builderProfilePic"
-        tools:ignore="SpeakableTextPresentCheck"/>
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editId"
@@ -93,9 +94,10 @@
         android:layout_marginEnd="15dp"
         android:ems="10"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editName"
-        tools:ignore="SpeakableTextPresentCheck"/>
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editPhone"
@@ -105,9 +107,10 @@
         android:layout_marginEnd="15dp"
         android:ems="10"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView23"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editId"
-        tools:ignore="SpeakableTextPresentCheck"/>
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/editAddress"
@@ -117,9 +120,10 @@
         android:layout_marginEnd="15dp"
         android:ems="10"
         android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editPhone"
-        tools:ignore="SpeakableTextPresentCheck"/>
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
         android:id="@+id/cancelButton"
