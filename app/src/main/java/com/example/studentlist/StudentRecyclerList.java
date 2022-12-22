@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,18 +36,28 @@ public class StudentRecyclerList extends AppCompatActivity {
 
         adapter.setOnItemClickListener((position)->{
                 Student st = studentList.get(position);
-            Log.d("we here  1?","yes");
-                Intent intent = new Intent(this,ProfilePage.class);
-                Log.d("we here 2?","yes");
-                intent.putExtra("position",position);
-                intent.putExtra("name",st.name);
-                intent.putExtra("id",st.id);
-                intent.putExtra("phone",st.phone);
-                intent.putExtra("address",st.address);
-                intent.putExtra("checkButton",st.checkButton.booleanValue());
-                startActivity(intent);
+                Intent intent = new Intent(StudentRecyclerList.this,ProfilePage.class);
+                intent.putExtra("sName",st.name);
+                intent.putExtra("sId",st.id);
+                intent.putExtra("sPhoneNumber",st.phone);
+                intent.putExtra("sAddress",st.address);
+                intent.putExtra("sCheckButton",st.checkButton.booleanValue());
+                intent.putExtra("sPosition",position);
+                startActivityForResult(intent, 1);
+//                startActivity(intent);
             }
         );
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d("string", "onActivityResult: ");
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK && requestCode == 1) {
+            if (data.hasExtra("cb")) {
+                Log.d("meep","otiot");
+                studentList.get(data.getIntExtra("pos",0)).checkButton = data.getBooleanExtra("cb", false);
+            }
+        }
     }
 
     public void addStudentButton(View view) {

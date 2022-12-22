@@ -40,7 +40,8 @@ public class StudentBuilder extends AppCompatActivity {
         String buildAddress = studentAddress.getText().toString();
         Boolean isChecked = checkBox.isChecked();
         studentList.add(new Student(buildName, buildId, buildPhone, buildAddress, isChecked));
-        Intent intent = new Intent(this, StudentRecyclerList.class);
+        Intent intent = new Intent(getApplicationContext(), StudentRecyclerList.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
